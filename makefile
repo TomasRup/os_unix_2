@@ -1,5 +1,5 @@
 COMPILER = gcc
-FILES = src/*.c
+FILES = src/*
 OUTPUT_FILE = app
 
 build: $(FILES)
