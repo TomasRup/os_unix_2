@@ -1,6 +1,6 @@
 COMPILER = gcc
 FILES = src/*
-OUTPUT_FILE = app
+OUTPUT_FILE = backgroundtasks
 
 build: $(FILES)
-	$(COMPILER) -o $(OUTPUT_FILE) -Wall $(FILES)
+	$(COMPILER) -o $(OUTPUT_FILE) -Wall $(FILES) -std=c99
