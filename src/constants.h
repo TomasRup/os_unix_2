@@ -11,4 +11,4 @@
 #define CODE_SUCCESS 0
 
 // Texts
-#define USAGE_LINE "\n\nUsage: backgroundtasks 'unixcmd1' 'unixcmd2' ... 'unixcmdn'"
+#define USAGE_LINE "\nUsage: backgroundtasks 'unixcmd1' 'unixcmd2' ... 'unixcmdn'\n"

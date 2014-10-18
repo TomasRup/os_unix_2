@@ -2,16 +2,22 @@
  *      T.P.Rupsys 2014
  */
 
-#include <string.h>
+#include <stdlib.h>
 #include "unix_process.h"
 #include "user_interface.h"
 
-struct UnixProcess init_process(const char *command) {
+struct UnixProcess init_process(char *command) {
   UnixProcess unixProcess;
-  strcpy(unixProcess.command, command);
+  unixProcess.command = command;
   return unixProcess;
 }
 
-void run_in_bg(struct UnixProcess *processes) {
-  print_number(sizeof(processes));
+void run_single_process_in_bg(struct UnixProcess process) {
+  // TODO: complete
+}
+
+void run_in_bg(struct UnixProcess *processes, const int size) { 
+  for (int i=0 ; i<size ; i++) {
+    run_single_process_in_bg(processes[i]);
+  }
 }

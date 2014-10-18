@@ -7,19 +7,22 @@
 #include "unix_adapter.h"
 #include "unix_process.h"
 
-int main(const int argc, const char *argv[]) {
-  if (argc < 2) {
+int main(int argc, char *argv[]) {
+  const int amountOfTasks = argc-1;  
+
+  if (amountOfTasks < 1) {
     print_text(USAGE_LINE);
     return CODE_INVALID_USAGE;
   }
 
   // Initializing processes
-  struct UnixProcess backgroundTasks[argc-1];
-  for (int i=1 ; i<argc ; i++) { 
-    backgroundTasks[i-1] = init_process(argv[i]); 
+  UnixProcess backgroundTasks[amountOfTasks];
+
+  for (int i=0 ; i<amountOfTasks ; i++) { 
+    backgroundTasks[i] = init_process(argv[i+1]); 
   }
 
   // Moving tasks to background
-  run_in_bg(backgroundTasks); 
+  run_in_bg(backgroundTasks, amountOfTasks); 
   return CODE_SUCCESS;
 }
