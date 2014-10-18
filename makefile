@@ -1,13 +1,13 @@
-COMPILER=gcc
+DIR_COMMONS=commons/
+DIR_DAEMONISER=daemoniser/
+DIR_LAUNCHER=launcher/
 
-SRC_COMMONS=commons/src/
+TARGET_LAUNCHER=launcher/target/launcher
+TARGET_APP_NAME=backgroundtasks
 
-SRC_DAEMONISER=daemoniser/src/*
-OUTPUT_DAEMONISER=daemoniser/run_daemon
-
-SRC_APP=src/*
-OUTPUT_APP=backgroundtasks
-
-build: $(FILES)
-	$(COMPILER) -o $(OUTPUT_DAEMONISER) -Wall $(SRC_DAEMONISER) -I $(SRC_COMMONS) -std=c99
-	$(COMPILER) -DDAEMON_LOCATION=$(OUTPUT_DAEMONISER) -o $(OUTPUT_APP) -Wall $(SRC_APP) -I $(SRC_COMMONS) -std=c99
+build:
+	rm -f $(TARGET_APP_NAME)
+	(cd $(DIR_COMMONS); $(MAKE))
+	(cd $(DIR_DAEMONISER); $(MAKE))
+	(cd $(DIR_LAUNCHER); $(MAKE))
+	cp $(TARGET_LAUNCHER) $(TARGET_APP_NAME)	

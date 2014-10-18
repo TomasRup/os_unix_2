@@ -10,11 +10,10 @@ int getCodeSuccess();
 int getCodeInvalidUsage();
 int getCodeFailedToExecuteCommand();
 int getCodeFailedToCreateProcess();
-int getCodeIncorrectCompilation();
 
 /* Texts */
 char *getUsageLineDaemoniser();
 char *getUsageLineLauncher();
-char *getIncorrectCompilation();
+char *getDaemonLocation();
 
 #endif

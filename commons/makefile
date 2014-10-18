@@ -1,12 +1,12 @@
 COMPILER=gcc
+FOLDER=src
 FILES=src/*
-TARGET_LOCATION=target
 
 build: $(FILES)
 	$(COMPILER) -Wall -std=c99 -c $(FILES)
-	rm $(FILES).h.gch
-	mv *.o $(TARGET_LOCATION)
+	rm -f $(FILES).h.gch
+	rm -f *.o
 	
 clean:
-	rm $(FILES).h.gch
-	rm *.o
+	rm -f $(FILES).h.gch
+	rm -f *.o

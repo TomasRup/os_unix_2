@@ -17,19 +17,14 @@ int getCodeFailedToExecuteCommand() {
 int getCodeFailedToCreateProcess() {
   return 3;
 }
-
-int getCodeIncorrectCompilation() {
-  return 4;
-}
-
 char *getUsageLineDaemoniser() {
-  return "\nUsage: daemoniser 'unixcmd'";
+  return "\nUsage: daemoniser 'unixcmd'\n";
 }
 
 char *getUsageLineLauncher() {
-  return"\nUsage: backgroundtasks 'unixcmd_1' 'unixcmd_2' ... 'unixcmd_n'\n";
+  return "\nUsage: backgroundtasks 'unixcmd_1' 'unixcmd_2' ... 'unixcmd_n'\n";
 }
 
-char *getIncorrectCompilation() {
-  return "\n'DAEMON_LOCATION' has not been defined during compilation!\n\n";
+char *getDaemonLocation() {
+  return "daemoniser/target/daemoniser";
 }

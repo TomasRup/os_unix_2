@@ -6,6 +6,6 @@
 #define daemon_app_launcher_H
 
 /* Executes command on the system */
-void launch(const char *command);
+int launch(const char *command);
 
 #endif

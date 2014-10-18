@@ -1,13 +1,15 @@
 COMPILER=gcc
 
-SRC_COMMONS=commons/src/
+FOLDER=src
+FILES=src/*
+COMMONS_ORIGINAL=../commons/src
+COMMONS_TARGET=src/commons/
 
-SRC_DAEMONISER=daemoniser/src/*
-OUTPUT_DAEMONISER=daemoniser/run_daemon
+OUTPUT=target/daemoniser
 
-SRC_APP=src/*
-OUTPUT_APP=backgroundtasks
-
-build: $(FILES)
-	$(COMPILER) -o $(OUTPUT_DAEMONISER) -Wall $(SRC_DAEMONISER) -I $(SRC_COMMONS) -std=c99
-	$(COMPILER) -DDAEMON_LOCATION=$(OUTPUT_DAEMONISER) -o $(OUTPUT_APP) -Wall $(SRC_APP) -I $(SRC_COMMONS) -std=c99
+build: $(FOLDER) 
+	rm -rf $(COMMONS_TARGET)
+	mkdir $(COMMONS_TARGET)
+	cp $(COMMONS_ORIGINAL)/* $(COMMONS_TARGET)
+	$(COMPILER) -o $(OUTPUT) -Wall -std=c99 $(COMMONS_TARGET)*.c $(FILES).c
+	rm -rf $(COMMONS_TARGET)

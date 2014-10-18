@@ -6,10 +6,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "commons/constants.h"
+
 int launch(const char *command) {
   // Forming command string
-  char *commandToExecute;
-  strcpy(commandToExecute, DAEMON_LOCATION);
+  char *commandToExecute = (char *) malloc(sizeof(command));
+  strcpy(commandToExecute, getDaemonLocation());
   strcat(commandToExecute, " ");
   strcat(commandToExecute, command);
 

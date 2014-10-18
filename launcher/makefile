@@ -1,11 +1,15 @@
 COMPILER=gcc
 
+FOLDER=src
 FILES=src/*
-COMMONS=../commons/src/target/*
-OUTPUT_DAEMONISER=../daemoniser/target/daemoniser
+COMMONS_ORIGINAL=../commons/src
+COMMONS_TARGET=src/commons/
 
 OUTPUT=target/launcher
 
-build: $(FILES)
-	rm  
-	$(COMPILER) -D DAEMON_LOCATION=$(OUTPUT_DAEMONISER) -o $(OUTPUT) -Wall -std=c99 $(FILES)
+build: $(FOLDER) 
+	rm -rf $(COMMONS_TARGET)
+	mkdir $(COMMONS_TARGET)
+	cp $(COMMONS_ORIGINAL)/* $(COMMONS_TARGET)
+	$(COMPILER) -o $(OUTPUT) -Wall -std=c99 $(COMMONS_TARGET)*.c $(FILES).c
+	rm -rf $(COMMONS_TARGET)

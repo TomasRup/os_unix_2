@@ -2,16 +2,18 @@
  *      T.P.Rupsys 2014
  */
 
-#include "constants.h"
-#include "user_interface.h"
-#include "command_executor.h"
 #include <stdio.h>
+
+#include "commons/constants.h"
+#include "commons/user_interface.h"
+
+#include "command_executor.h"
 
 int main(int argc, char *argv[]) {
   // Validating arguments
   if (argc != 2) {
-    print_text(USAGE_LINE_DAEMONISER);
-    return CODE_INVALID_USAGE;
+    print_text(getUsageLineDaemoniser());
+    return getCodeInvalidUsage();
   }
 
   // Launching the command
@@ -20,6 +22,6 @@ int main(int argc, char *argv[]) {
   // Running as daemon
   // TODO
 
-  // Exiting 
-  return CODE_SUCCESS;
+  // Exiting
+  return getCodeSuccess();
 }
