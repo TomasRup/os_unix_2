@@ -23,4 +23,7 @@ void do_umask(char *command);
 /* Transforms the currently working application to a UNIX daemon */
 int switch_to_unix_daemon(char *command);
 
+/* Executes command in the UNIX system */
+int execute(const char *command);
+
 #endif

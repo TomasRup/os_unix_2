@@ -7,7 +7,6 @@
 #include "commons/constants.h"
 #include "commons/user_interface.h"
 
-#include "command_executor.h"
 #include "unix_adapter.h"
 
 int main(int argc, char *argv[]) {

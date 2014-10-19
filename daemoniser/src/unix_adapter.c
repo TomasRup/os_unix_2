@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <signal.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -88,4 +90,16 @@ int switch_to_unix_daemon(char *command) {
   // Exiting
   log_info("Successfully became a daemon while executing '%s'", command);
   return getCodeSuccess();
+}
+
+int execute(char *command) {
+  int exitCode = system(command);
+
+  if (exitCode == -1) {
+    log_error("Error occurred while executing '%s'", command);
+  } else {
+    log_info("Successfully executed '%s'", command);
+  }
+
+  return exitCode;
 }
