@@ -14,11 +14,16 @@ int getCodeFailedToForkOff();
 int getCodeFailedToChangeDir();
 int getCodeFailedToCloseStd();
 int getCodeFailedToSetSid();
+int getCodeFailedToOpenLogs();
+int getCodeFailedToClearLogs();
 
 /* Texts */
 char *getUsageLineDaemoniser();
 char *getUsageLineLauncher();
 char *getDaemonLocation();
 char *getErrorDaemonising();
+
+/* Locations */
+char *getLogsLocation();
 
 #endif

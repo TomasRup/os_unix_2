@@ -11,3 +11,4 @@ build:
 	(cd $(DIR_DAEMONISER); $(MAKE))
 	(cd $(DIR_LAUNCHER); $(MAKE))
 	cp $(TARGET_LAUNCHER) $(TARGET_APP_NAME)	
+	cat /dev/null > /var/log/backgroundtasks/info.log

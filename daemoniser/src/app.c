@@ -18,11 +18,8 @@ int main(int argc, char *argv[]) {
   }
 
   // Running as daemon
-  switch_to_unix_daemon();
+  switch_to_unix_daemon(argv[1]);
 
   // Launching the command
-  execute(argv[1]);
-
-  // Exiting
-  return getCodeSuccess();
+  return execute(argv[1]);
 }

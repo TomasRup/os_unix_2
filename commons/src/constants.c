@@ -34,6 +34,14 @@ int getCodeFailedToSetSid() {
   return 7;
 }
 
+int getCodeFailedToOpenLogs() {
+  return 8;
+}
+
+int getCodeFailedToClearLogs() {
+  return 9;
+}
+
 char *getUsageLineDaemoniser() {
   return "\nUsage: daemoniser 'unixcmd'\n";
 }
@@ -48,4 +56,8 @@ char *getDaemonLocation() {
 
 char *getErrorDaemonising() {
   return "\n\nFailed to daemonise!\n";
+}
+
+char *getLogsLocation() {
+  return "/var/log/backgroundtasks/info.log";
 }

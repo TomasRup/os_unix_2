@@ -17,4 +17,16 @@ void print_text(char *text);
 /* Prints given 'number' */
 void print_number(int number);
 
+/* Forms a string with date and level */
+char *form_prefix(const char *level);
+
+/* Prints log to a file */
+void log_to_file(const char *prefix, const char *formattedString, ...);
+
+/* Logs data at INFO level */
+void log_info(const char *formattedString, ...);
+
+/* Logs data at ERROR level */
+void log_error(const char *formattedString, ...);
+
 #endif

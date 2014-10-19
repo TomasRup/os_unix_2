@@ -18,10 +18,10 @@ int main(int argc, char *argv[]) {
 
   // Iterating each command and executing
   for (int i=1 ; i<=amountOfTasks ; i++) {
-    int exitCode = launch(argv[i]);
+    int daemonExitCode = launch(argv[i]);
 
-    if (exitCode != getCodeSuccess()) {
-      return getCodeFailedToExecuteCommand();
+    if (daemonExitCode != getCodeSuccess()) {
+      return daemonExitCode;
     }
   }
 

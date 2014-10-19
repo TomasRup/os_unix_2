@@ -9,7 +9,7 @@
 #include "commons/constants.h"
 
 int launch(const char *command) {
-  // Forming command string
+  // Forming a command string
   char *commandToExecute = (char *) malloc(sizeof(command));
   strcpy(commandToExecute, getDaemonLocation());
   strcat(commandToExecute, " \"");
