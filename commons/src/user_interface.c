@@ -8,8 +8,8 @@
 #include <stdarg.h>
 #include "constants.h"
 
-void silently_exit() {
-  exit(getCodeSuccess());
+void silently_exit(int code) {
+  exit(code);
 }
 
 void print(const char *formattedString, ...) {

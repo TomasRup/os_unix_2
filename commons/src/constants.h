@@ -10,10 +10,15 @@ int getCodeSuccess();
 int getCodeInvalidUsage();
 int getCodeFailedToExecuteCommand();
 int getCodeFailedToCreateProcess();
+int getCodeFailedToForkOff();
+int getCodeFailedToChangeDir();
+int getCodeFailedToCloseStd();
+int getCodeFailedToSetSid();
 
 /* Texts */
 char *getUsageLineDaemoniser();
 char *getUsageLineLauncher();
 char *getDaemonLocation();
+char *getErrorDaemonising();
 
 #endif

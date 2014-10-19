@@ -6,7 +6,7 @@
 #define user_interface_H
 
 /* Silently exits from the application with success status */
-void silently_exit();
+void silently_exit(int code);
 
 /* Formatted print */
 void print(const char *formattedString, ...);

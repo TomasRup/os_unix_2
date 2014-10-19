@@ -8,6 +8,7 @@
 #include "commons/user_interface.h"
 
 #include "command_executor.h"
+#include "unix_adapter.h"
 
 int main(int argc, char *argv[]) {
   // Validating arguments
@@ -16,11 +17,11 @@ int main(int argc, char *argv[]) {
     return getCodeInvalidUsage();
   }
 
+  // Running as daemon
+  switch_to_unix_daemon();
+
   // Launching the command
   execute(argv[1]);
-
-  // Running as daemon
-  // TODO
 
   // Exiting
   return getCodeSuccess();

@@ -17,6 +17,23 @@ int getCodeFailedToExecuteCommand() {
 int getCodeFailedToCreateProcess() {
   return 3;
 }
+
+int getCodeFailedToForkOff() {
+  return 4;
+}
+
+int getCodeFailedToChangeDir() {
+  return 5;
+}
+
+int getCodeFailedToCloseStd() {
+  return 6;
+}
+
+int getCodeFailedToSetSid() {
+  return 7;
+}
+
 char *getUsageLineDaemoniser() {
   return "\nUsage: daemoniser 'unixcmd'\n";
 }
@@ -27,4 +44,8 @@ char *getUsageLineLauncher() {
 
 char *getDaemonLocation() {
   return "daemoniser/target/daemoniser";
+}
+
+char *getErrorDaemonising() {
+  return "\n\nFailed to daemonise!\n";
 }

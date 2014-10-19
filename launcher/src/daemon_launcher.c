@@ -12,8 +12,9 @@ int launch(const char *command) {
   // Forming command string
   char *commandToExecute = (char *) malloc(sizeof(command));
   strcpy(commandToExecute, getDaemonLocation());
-  strcat(commandToExecute, " ");
+  strcat(commandToExecute, " \"");
   strcat(commandToExecute, command);
+  strcat(commandToExecute, "\"");
 
   // Calling the command
   int exitCode = system(commandToExecute);
